@@ -12,6 +12,7 @@ public class F_ScoreSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI OrangeTxt;
     [SerializeField] private TextMeshProUGUI MangoTxt;
     [SerializeField] private TextMeshProUGUI ScoreTxt;
+    [SerializeField] private TextMeshProUGUI WorngTxt;
     static int AScore = 0;
     static int OScore = 0;
     static int MScore = 0;
@@ -59,5 +60,10 @@ public class F_ScoreSystem : MonoBehaviour
         {
             Reward.sprite= FistMedal;
         }
+    }
+    public void WrongFruit(int score, string name)
+    {
+        TScore -= score;
+        WorngTxt .text =  "-"+ score.ToString() +" : "+name;
     }
 }
