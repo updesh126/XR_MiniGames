@@ -6,26 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu 1.unity
+    guid: ed3b4f8d9264d49439f7561e96f3aa47
   - enabled: 1
-    path: Assets/BoxingGame/Scenes/B_Level 0.unity
-    guid: 9096d1d8e425d764a810f8ae962c95b7
-  - enabled: 1
-    path: Assets/BoxingGame/Scenes/B_Level 1.unity
+    path: Assets/Scenes/B_Level 1.unity
     guid: 887c4656f432ef14f94e262ff18ae3ab
   - enabled: 1
-    path: Assets/BoxingGame/Scenes/B_Level Test.unity
+    path: Assets/Scenes/B_Level Test.unity
     guid: abeb1942b6c60614cb6aa8e047ea7c7b
   - enabled: 1
-    path: Assets/BoxingGame/Scenes/B_Menu.unity
-    guid: 37b61a5fdd5f3354f88e00336bbf31ad
-  - enabled: 1
-    path: Assets/FruitGames/Scenes/F_Level 1.unity
+    path: Assets/Scenes/F_Level 1.unity
     guid: ded6a40d71aaea2428e89986b1c49148
   - enabled: 1
-    path: Assets/FruitGames/Scenes/F_MainMenu.unity
-    guid: c0fd1c73e5d84064da7f183a38f77a84
+    path: Assets/Scenes/R_Level 1.unity
+    guid: 365c7cf16b8e0ca48b50b9c4758a0d6f
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 06418b888425a404caf38b8d6722036b,
       type: 2}
