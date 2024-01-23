@@ -10,6 +10,12 @@ public class RunnerTimer : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI TimerTxt;
 
+    [Header("GameObjects to Hide")]
+    [SerializeField] GameObject PanelShow;
+    [SerializeField] private GameObject ScoreBoad;
+    [SerializeField]
+    AudioSource TimeOut;
+
     private void Start()
     {
         isTimeRunning = true;
@@ -25,6 +31,9 @@ public class RunnerTimer : MonoBehaviour
         {
             remainingTime = 0;
             TimerTxt.color = Color.red;
+            PanelShow.SetActive(false);
+            ScoreBoad.SetActive(true);
+            TimeOut.Play();
 
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);

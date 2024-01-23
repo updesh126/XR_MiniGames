@@ -24,6 +24,12 @@ public class F_ScoreSystem : MonoBehaviour
     [SerializeField] private Sprite SecondMedal;
     [SerializeField] private Sprite ThirdMedal;
 
+    [Header("Top Score")]
+    public TMP_Text YourScoretext;
+    public TMP_Text HighScoretext;
+    public TMP_Text Congtext;
+    public bool isScored;
+
     public void Apple()
     {
         AScore++;
@@ -39,10 +45,22 @@ public class F_ScoreSystem : MonoBehaviour
         MScore++;
         MangoTxt.text= MScore.ToString();
     }
+    private void Start()
+    {
+        HighScoretext.text = PlayerPrefs.GetInt("Fruit", 0).ToString();
+        isScored = false;
+    }
     void Update()
     {
         TScore = (AScore*4)+(OScore*6)+(MScore*4);
         ScoreTxt.text= TScore.ToString();
+        if (TScore > PlayerPrefs.GetInt("Fruit", 0) && isScored== true)
+        {
+            PlayerPrefs.SetInt("Fruit", TScore);
+            HighScoretext.text = PlayerPrefs.GetInt("Fruit", 0).ToString();
+
+            Congtext.gameObject.SetActive(true);
+        }
         ScoreReward();
     }
 
@@ -65,5 +83,9 @@ public class F_ScoreSystem : MonoBehaviour
     {
         TScore -= score;
         WorngTxt .text =  "-"+ score.ToString() +" : "+name;
+    }
+    public void ISScored()
+    {
+        isScored = true;
     }
 }

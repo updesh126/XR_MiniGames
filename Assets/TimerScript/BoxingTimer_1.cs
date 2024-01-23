@@ -35,6 +35,7 @@ public class BoxingTimer_1 : MonoBehaviour
             SpwanSystem.SetActive(false);
             PanelShow.SetActive(false);
             ScoreBoad.SetActive(true);
+            TimeOut.Play();
         }
         //remainingTime -= Time.deltaTime;
         int minutes = Mathf.FloorToInt(remainingTime / 60);

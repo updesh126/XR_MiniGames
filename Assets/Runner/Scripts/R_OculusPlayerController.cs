@@ -91,5 +91,9 @@ public class R_OculusPlayerController : MonoBehaviour
         scoringSystem.Reset();
         SceneManager.LoadScene(name);
     }
+    public void stop()
+    {
+        speed = 0f;
+    }
 
 }

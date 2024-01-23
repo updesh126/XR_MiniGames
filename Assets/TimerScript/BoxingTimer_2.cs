@@ -31,6 +31,10 @@ public class BoxingTimer_2 : MonoBehaviour
         {
             remainingTime = 0;
             TimerTxt.color = Color.red;
+            PanelShow.SetActive(false);
+            ScoreBoad.SetActive(true);
+            Enemy.SetActive(false);
+            TimeOut.Play();
 
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);

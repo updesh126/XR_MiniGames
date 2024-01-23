@@ -7,8 +7,14 @@ public class FruitTimer : MonoBehaviour
 {
     public float remainingTime;
     public bool isTimeRunning;
-
+    [SerializeField] F_ScoreSystem scoreSystem;
     [SerializeField] private TextMeshProUGUI TimerTxt;
+    [Header("GameObjects to Hide")]
+    public GameObject System;
+    [SerializeField] GameObject PanelShow;
+    [SerializeField] private GameObject ScoreBoad;
+    [SerializeField]
+    AudioSource TimeOut;
 
     private void Start()
     {
@@ -25,6 +31,11 @@ public class FruitTimer : MonoBehaviour
         {
             remainingTime = 0;
             TimerTxt.color = Color.red;
+            scoreSystem.ISScored();
+            PanelShow.SetActive(false);
+            ScoreBoad.SetActive(true);
+            System.SetActive(false);
+            TimeOut.Play();
 
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);
