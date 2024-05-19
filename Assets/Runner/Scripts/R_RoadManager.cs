@@ -22,7 +22,9 @@ public class R_RoadManager : MonoBehaviour
     {
         //yield return new WaitForSeconds(3);
         GameObject movedRoad = roads[0];
-        roads.Remove(movedRoad);
+        Destroy( movedRoad );
+        Destroy(roads[0]);
+        //roads.Remove(movedRoad);
         GameObject prefeb = Instantiate(root);
         float newX = roads[roads.Count - 1].transform.position.z + offset;
         GameObject.Destroy(movedRoad);

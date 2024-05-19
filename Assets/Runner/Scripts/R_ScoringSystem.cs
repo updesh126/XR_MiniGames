@@ -32,7 +32,7 @@ public class R_ScoringSystem : MonoBehaviour
         {
             PlayerPrefs.SetInt("Runner", Score);
             HighScoretext.text = PlayerPrefs.GetInt("Runner", 0).ToString();
-            oculusPlayerController.stop();
+            //oculusPlayerController.stop();
             //Congtext.gameObject.SetActive(true);
         }
     }
