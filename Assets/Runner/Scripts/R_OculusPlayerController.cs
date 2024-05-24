@@ -10,6 +10,8 @@ public class R_OculusPlayerController : MonoBehaviour
 {
     public Transform VRPlayer;
 
+    public AudioSource CoinMusic;
+
     public float lookDoownAngle = 15.0f;
 
     public float speed = 3.0f;
@@ -63,10 +65,15 @@ public class R_OculusPlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             scoringSystem.AddScore(1);
+            CoinMusic.Play();
             Debug.Log("Coin");
         }
         //if (other.gameObject.tag == "SpawnTrigger")
         
+        if(other.gameObject.tag == "resetGame")
+        {
+            ResetGame("R_Level 1");
+        }
 
 
     }
