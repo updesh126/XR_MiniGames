@@ -7,8 +7,8 @@ public class B_BlueHit : MonoBehaviour
 
     [SerializeField]
     AudioSource HitAudio;
-
-    B_scoreSyem0 scoreSyem = new B_scoreSyem0();
+    [SerializeField]
+    B_scoreSyem0 scoreSyem;
 
 
     private void OnTriggerEnter(Collider other)

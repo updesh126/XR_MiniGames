@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class F_CheckFruits : MonoBehaviour
 {
@@ -9,6 +10,34 @@ public class F_CheckFruits : MonoBehaviour
 
     [SerializeField]
     private F_ScoreSystem scoreSystem;
+
+    [SerializeField]
+    AudioClip coin;
+    [SerializeField]
+    AudioClip error;
+
+    AudioSource coinSource;
+
+    public Volume volume;
+
+    void Start()
+    {
+        //volume.weight = 1.0f;
+        coinSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+
+    }
+
+    // Call this method when the player gets hit
+    IEnumerator OnHit()
+    {
+        volume.weight = 1.0f;
+        yield return new WaitForSeconds(1);
+        volume.weight = 0.0f;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,10 +50,13 @@ public class F_CheckFruits : MonoBehaviour
             if (other.gameObject.tag == "Mango")
             {
                 scoreSystem.WrongFruit(40,"Mango");
+                OnHit();
             }
             if(other.gameObject.tag == "Orange")
             {
                 scoreSystem.WrongFruit(60, "Orange");
+                OnHit();
+
             }
         }
         if (isOrange)
@@ -32,10 +64,14 @@ public class F_CheckFruits : MonoBehaviour
             if (other.gameObject.tag == "Apple")
             {
                 scoreSystem.WrongFruit(40, "Apple");
+                OnHit();
+
             }
             if (other.gameObject.tag == "Mango")
             {
                 scoreSystem.WrongFruit(40, "Mango");
+                OnHit();
+
             }
             if (other.gameObject.tag == "Orange")
             {
@@ -47,6 +83,8 @@ public class F_CheckFruits : MonoBehaviour
             if (other.gameObject.tag == "Apple")
             {
                 scoreSystem.WrongFruit(40, "Apple");
+                OnHit();
+
             }
             if (other.gameObject.tag == "Mango")
             {
@@ -55,6 +93,8 @@ public class F_CheckFruits : MonoBehaviour
             if (other.gameObject.tag == "Orange")
             {
                 scoreSystem.WrongFruit(60, "Orange");
+                OnHit();
+
             }
         }
     }
