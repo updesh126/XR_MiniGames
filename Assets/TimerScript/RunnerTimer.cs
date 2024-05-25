@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RunnerTimer : MonoBehaviour
 {
+    public R_OculusPlayerController r_OculusPlayerController;
     public float remainingTime;
     public bool isTimeRunning;
 
@@ -34,7 +35,7 @@ public class RunnerTimer : MonoBehaviour
             PanelShow.SetActive(false);
             ScoreBoad.SetActive(true);
             TimeOut.Play();
-
+            r_OculusPlayerController.stop();
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);

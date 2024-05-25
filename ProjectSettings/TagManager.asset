@@ -3,7 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RightWall
+  - LeftWall
+  - SpawnTrigger
+  - Right
+  - Box
+  - red
+  - nothing
+  - Partical
+  - LeftHand
+  - Coin
+  - Left
+  - Mango
+  - Anchor
+  - blue
+  - Apple
+  - Orange
+  - Wall
+  - Bow
+  - bot
+  - RightHand
+  - resetGame
   layers:
   - Default
   - TransparentFX
